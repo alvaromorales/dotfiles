@@ -48,6 +48,10 @@ colorscheme solarized
 " NerdTree
 map <F2> :NERDTreeToggle<CR>
 
+" emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 " Code Folding
 set foldmethod=indent
 set foldlevel=99
