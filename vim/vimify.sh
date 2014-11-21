@@ -5,6 +5,6 @@ mkdir ~/.vim/bundle
 mkdir ~/.vim/ftplugin
 
 cp ftplugin/python.vim ~/.vim/ftplugin
-cp .vimrc ~
+cp vimrc ~
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
