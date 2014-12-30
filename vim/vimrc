@@ -35,6 +35,7 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'pangloss/vim-javascript'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'vim-scripts/matchit.zip'
+Bundle 'tell-k/vim-autopep8'
 
 " Syntax highlighting
 syntax on                    " syntax highlighing
@@ -84,6 +85,9 @@ let g:pyflakes_use_quickfix = 0 	" no quickfix window
 
 " Pep8
 let g:pep8_map='<F7>'
+
+" Autopep8
+let g:autopep8_ignore="E501"
 
 " Tab Completion and Doc
 au FileType python set omnifunc=pythoncomplete#Complete

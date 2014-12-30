@@ -8,3 +8,5 @@ cp ftplugin/*.vim ~/.vim/ftplugin
 cp vimrc ~/.vimrc
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+pip install pep8
+pip install autopep8
