@@ -1,12 +1,15 @@
 sudo apt-get install git-core -y
 
-mkdir ~/.vim
-mkdir ~/.vim/bundle
-mkdir ~/.vim/ftplugin
+mkdir -p ~/.vim
+mkdir -p ~/.vim/bundle
+mkdir -p ~/.vim/ftplugin
 
 cp ftplugin/*.vim ~/.vim/ftplugin
 cp vimrc ~/.vimrc
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+if [[ ! e ~/.vim/bundle/vundle ]]
+  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
+
 pip install pep8
 pip install autopep8
