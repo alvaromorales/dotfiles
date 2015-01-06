@@ -7,7 +7,7 @@ mkdir -p ~/.vim/ftplugin
 cp ftplugin/*.vim ~/.vim/ftplugin
 cp vimrc ~/.vimrc
 
-if [[ ! e ~/.vim/bundle/vundle ]]
+if [ ! -e ~/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 
