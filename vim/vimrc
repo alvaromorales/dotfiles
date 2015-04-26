@@ -4,38 +4,28 @@ set number              " line numbers
 set nobackup            " get rid of anoying ~file
 set showmatch
 set hidden
+
 set rtp+=~/.vim/bundle/vundle/
 
 call vundle#rc()
 
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-" Bundles from Github
-"
-Bundle 'altercation/vim-colors-solarized.git'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-git'
-Bundle 'ervandew/supertab'
-Bundle 'kevinw/pyflakes-vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'fs111/pydoc.vim'
-Bundle 'vim-scripts/pep8'
-Bundle 'alfredodeza/pytest.vim'
-Bundle 'reinh/vim-makegreen'
-Bundle 'vim-scripts/TaskList.vim'
-Bundle 'sontek/rope-vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mattn/emmet-vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'vim-scripts/matchit.zip'
-Bundle 'tell-k/vim-autopep8'
+" Plugins from Github
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-git'
+Plugin 'kevinw/pyflakes-vim'
+Plugin 'ervandew/supertab'
+Plugin 'vim-scripts/pep8'
+Plugin 'sontek/rope-vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'tell-k/vim-autopep8'
 
 " Syntax highlighting
 syntax on                    " syntax highlighing
@@ -50,10 +40,6 @@ colorscheme solarized
 " NerdTree
 map <F2> :NERDTreeToggle<CR>
 
-" emmet
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-
 " Code Folding
 set foldmethod=indent
 set foldlevel=99
@@ -66,12 +52,6 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-
-" Task List
-map <leader>td <Plug>TaskList
-
-" Gundo toggle
-map <leader>g :GundoToggle<CR>
 
 " Quickfix window
 " :copen " Open the quickfix window
@@ -93,7 +73,8 @@ let g:autopep8_disable_show_diff=1
 " Tab Completion and Doc
 au FileType python set omnifunc=pythoncomplete#Complete
 let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview " to remove pydoc preview, set completeopt-=preview
+set completeopt=menuone,longest
+" set completeopt-=preview
 
 " CtrlP
 map <leader>t :CtrlP<CR>
@@ -102,10 +83,3 @@ map <leader>b :CtrlPBuffer<CR>
 " Ropevim
 map <leader>j :RopeGotoDefinition<CR>
 map <leader>r :RopeRename<CR>
-
-" Ack
-nmap <leader>a <Esc>:Ack!
-
-" Fugitive
-set statusline=%{fugitive#statusline()}
-
