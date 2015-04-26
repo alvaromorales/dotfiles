@@ -24,8 +24,8 @@ if [ ! -e ~/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 
-pip install pep8
-pip install autopep8
+sudo pip install pep8
+sudo pip install autopep8
 
 cp ftplugin/*.vim ~/.vim/ftplugin
 cp vimrc ~/.vimrc
