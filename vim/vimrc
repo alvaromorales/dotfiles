@@ -13,19 +13,18 @@ Plugin 'gmarik/vundle'
 
 " Plugins from Github
 Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-git'
-Plugin 'kevinw/pyflakes-vim'
 Plugin 'ervandew/supertab'
-Plugin 'vim-scripts/pep8'
-Plugin 'sontek/rope-vim'
-Plugin 'kien/ctrlp.vim'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
+Plugin 'kevinw/pyflakes-vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'vim-scripts/matchit.zip'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/nerdtree'
 Plugin 'tell-k/vim-autopep8'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'vim-scripts/pep8'
 
 " Syntax highlighting
 syntax on                    " syntax highlighing
@@ -45,9 +44,9 @@ set foldmethod=indent
 set foldlevel=99
 
 " Window Movement
-"       Vertical Split : Ctrl+w + v
-" 	Horizontal Split: Ctrl+w + s
-" 	Close current windows: Ctrl+w + q
+"   Vertical Split : Ctrl+w + v
+"   Horizontal Split: Ctrl+w + s
+"   Close current windows: Ctrl+w + q
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
@@ -80,6 +79,4 @@ set completeopt=menuone,longest
 map <leader>t :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 
-" Ropevim
-map <leader>j :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
+set colorcolumn=80
