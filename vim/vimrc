@@ -17,11 +17,11 @@ Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'ervandew/supertab'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'kevinw/pyflakes-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-surround'
@@ -54,15 +54,17 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-" Quickfix window
+" Quickfix window reference
 " :copen " Open the quickfix window
 " :ccl   " Close it
 " :cw    " Open it if there are 'errors', close it otherwise (some people prefer this)
 " :cn    " Go to the next error in the window
 " :cnf   " Go to the first error in the next file
 
-" Pyflakes
-let g:pyflakes_use_quickfix = 0 	" no quickfix window
+" Syntastic
+let g:pyflakes_use_quickfix = 0      " no quickfix window for pyflakes
+let g:syntastic_check_on_open = 1    " check for errors on buffer open
+let g:syntastic_check_on_wq = 0      " don't check on :wq
 
 " Pep8
 let g:pep8_map='<F7>'

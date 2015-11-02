@@ -26,6 +26,7 @@ fi
 
 if ! $(python -c "import pep8" &> /dev/null); then sudo pip install pep8; fi;
 if ! $(python -c "import autopep8" &> /dev/null); then sudo pip install autopep8; fi;
+if ! $(python -c "import flake8" &> /dev/null); then sudo pip install flake8; fi;
 
 cp ftplugin/*.vim ~/.vim/ftplugin
 cp vimrc ~/.vimrc
