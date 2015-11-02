@@ -1,9 +1,11 @@
-set nocompatible               " be iMproved
 set backspace=2         " backspace in insert mode works like normal editor
-set number              " line numbers
+set colorcolumn=80      " highlight column at 80 chars
+set hidden              " send unsaved buffers to the background without error
 set nobackup            " get rid of anoying ~file
-set showmatch
-set hidden
+set nocompatible        " disable old-vi compatibility mode
+set nohlsearch          " disable search highlighting
+set number              " line numbers
+set showmatch           " highlight matching bracket
 
 set rtp+=~/.vim/bundle/vundle/
 
@@ -31,7 +33,7 @@ syntax on                    " syntax highlighing
 filetype on                  " try to detect filetypes
 filetype plugin indent on    " enable loading indent file for filetype
 
-" Solarized stuff
+" Solarized
 let g:solarized_termtrans = 1
 set background=dark
 colorscheme solarized
@@ -79,4 +81,8 @@ set completeopt=menuone,longest
 map <leader>t :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 
-set colorcolumn=80
+" Neovim-specific configuration
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>    " use Esc to enter normal mode in terminal
+  nmap <BS> <C-W>h             " temp workaround, see neovim issue #2048
+endif
