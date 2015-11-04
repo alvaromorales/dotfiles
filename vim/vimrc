@@ -16,13 +16,13 @@ Plugin 'gmarik/vundle'
 
 " Plugins from Github
 Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'alvaromorales/pyflakes-vim'
 Plugin 'ervandew/supertab'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kien/ctrlp.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-surround'
@@ -62,10 +62,8 @@ map <c-h> <c-w>h
 " :cn    " Go to the next error in the window
 " :cnf   " Go to the first error in the next file
 
-" Syntastic
+" Pyflakes
 let g:pyflakes_use_quickfix = 0      " no quickfix window for pyflakes
-let g:syntastic_check_on_open = 1    " check for errors on buffer open
-let g:syntastic_check_on_wq = 0      " don't check on :wq
 
 " Pep8
 let g:pep8_map='<F7>'

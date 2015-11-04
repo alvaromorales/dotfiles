@@ -2,6 +2,8 @@
 
 echo "Starting Alvaro's vim setup"
 
+# TODO: switch to neovim
+
 # Make sure git is installed
 OS_T="$OSTYPE"
 if [[ $OS_T == "linux-gnu" ]]; then
@@ -24,9 +26,10 @@ if [ ! -e ~/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 
-if ! $(python -c "import pep8" &> /dev/null); then sudo pip install pep8; fi;
 if ! $(python -c "import autopep8" &> /dev/null); then sudo pip install autopep8; fi;
-if ! $(python -c "import flake8" &> /dev/null); then sudo pip install flake8; fi;
+if ! $(python -c "import neovim" &> /dev/null); then sudo pip install neovim; fi;
+if ! $(python -c "import pep8" &> /dev/null); then sudo pip install pep8; fi;
+if ! $(python -c "import pyflakes" &> /dev/null); then sudo pip install pyflakes; fi;
 
 cp ftplugin/*.vim ~/.vim/ftplugin
 cp vimrc ~/.vimrc
