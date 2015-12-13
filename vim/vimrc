@@ -82,8 +82,12 @@ set completeopt=menuone,longest
 map <leader>t :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
 
+" redraw
+map <leader>r :redraw!<CR>
+
 " Neovim-specific configuration
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>    " use Esc to enter normal mode in terminal
   nmap <BS> <C-W>h             " temp workaround, see neovim issue #2048
+  let g:python_host_prog=$WORKON_HOME."/nvim/bin/python"
 endif
