@@ -26,8 +26,16 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/pep8'
+
+" Global settings for all files (but may be overridden in ftplugin).
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
+setlocal smarttab
+setlocal expandtab
 
 " Syntax highlighting
 syntax on                    " syntax highlighing
@@ -80,7 +88,7 @@ set completeopt=menuone,longest
 
 " CtrlP
 map <leader>t :CtrlP<CR>
-map <leader>b :CtrlPBuffer<CR>
+map ; :CtrlPBuffer<CR>
 
 " Toggle line numbers
 map <leader>n :set nu!<CR>
@@ -93,5 +101,8 @@ if has('nvim')
   tnoremap <Esc> <C-\><C-n>    " use Esc to enter normal mode in terminal
   nmap <BS> <C-W>h             " temp workaround, see neovim issue #2048
   let g:python_host_prog=$WORKON_HOME."/nvim/bin/python"
-  set clipboard+=unnamedplus
 endif
+
+" Ruby overrides
+autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
