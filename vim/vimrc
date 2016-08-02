@@ -8,11 +8,11 @@ set nohlsearch          " disable search highlighting
 set number              " line numbers
 set showmatch           " highlight matching bracket
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#rc()
+call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " Plugins from Github
 Plugin 'altercation/vim-colors-solarized.git'
@@ -29,6 +29,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/pep8'
+
+call vundle#end()
 
 " Global settings for all files (but may be overridden in ftplugin).
 setlocal tabstop=4

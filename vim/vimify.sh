@@ -9,22 +9,26 @@ if [[ $OS_T == "linux-gnu" ]]; then
   sudo apt-get install git python-pip neovim -y
 elif [[ $OS_T == "darwin"* ]]; then
   # Mac OS X
-  brew install git neovim
+  brew install git neovim/neovim/neovim
 fi
 
 # Create the necessary directories
-[ -e ~/.vim ] || mkdir -p ~/.vim
-[ -e ~/.vim/bundle ] || mkdir -p ~/.vim/bundle
-[ -e ~/.vim/ftplugin ] || mkdir -p ~/.vim/ftplugin
+[ -e ~/.config/nvim ] || mkdir -p ~/.config/nvim
+[ -e ~/.config/nvim/bundle ] || mkdir -p ~/.config/nvim/bundle
+[ -e ~/.config/nvim/ftplugin ] || mkdir -p ~/.config/nvim/ftplugin
 
 # Install Vundle
 if [ ! -e ~/.vim/bundle/vundle ]; then
-  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 fi
 
 # Copy files
-cp ftplugin/*.vim ~/.vim/ftplugin
-cp vimrc ~/.vimrc
+cp ftplugin/*.vim ~/.config/nvim/ftplugin
+cp vimrc ~/.config/nvim/init.vim
+
+# Create symbolic links
+[ -e ~/.vim ] || ln -s ~/.config/nvim ~/.vim
+[ -e ~/.vimrc ] || ln -s ~/.config/nvim/init.vim ~/.vimrc
 
 # Setup virtualenv for neovim
 source `which virtualenvwrapper.sh`
