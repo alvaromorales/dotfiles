@@ -15,11 +15,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins from Github
+Plugin 'Quramy/tsuquyomi'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'altercation/vim-colors-solarized.git'
 Plugin 'alvaromorales/pyflakes-vim'
 Plugin 'ervandew/supertab'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kien/ctrlp.vim'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
@@ -81,6 +84,9 @@ let g:pep8_map='<F7>'
 " Autopep8
 let g:autopep8_ignore="E501"
 let g:autopep8_disable_show_diff=1
+
+" tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1
 
 " Tab Completion and Doc
 au FileType python set omnifunc=pythoncomplete#Complete
