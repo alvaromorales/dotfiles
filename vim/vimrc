@@ -113,6 +113,11 @@ if has('nvim')
   let g:python_host_prog=$WORKON_HOME."/nvim/bin/python"
 endif
 
-" Ruby overrides
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+" Common indent settings
+map <leader>2 :setlocal expandtab shiftwidth=2 tabstop=2<CR>
+map <leader>4 :setlocal expandtab shiftwidth=4 tabstop=4<CR>
+
+" Indentation overrides
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
