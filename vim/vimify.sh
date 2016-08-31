@@ -9,7 +9,7 @@ if [[ $OS_T == "linux-gnu" ]]; then
   sudo apt-get install git python-pip neovim -y
 elif [[ $OS_T == "darwin"* ]]; then
   # Mac OS X
-  brew install git neovim/neovim/neovim
+  brew install git neovim/neovim/neovim fzf
 fi
 
 # Create the necessary directories

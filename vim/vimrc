@@ -22,7 +22,8 @@ Plugin 'alvaromorales/pyflakes-vim'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'ervandew/supertab'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plugin 'junegunn/fzf.vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
@@ -95,9 +96,9 @@ let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest
 " set completeopt-=preview
 
-" CtrlP
-map <leader>t :CtrlP<CR>
-map ; :CtrlPBuffer<CR>
+" fzf
+map <leader>t :Files<CR>
+map ; :Buffers<CR>
 
 " Toggle line numbers
 map <leader>n :set nu!<CR>
