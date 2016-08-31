@@ -18,7 +18,7 @@ fi
 [ -e ~/.config/nvim/ftplugin ] || mkdir -p ~/.config/nvim/ftplugin
 
 # Install Vundle
-if [ ! -e ~/.vim/bundle/vundle ]; then
+if [ ! -e ~/.config/nvim/bundle/Vundle.vim ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 fi
 
