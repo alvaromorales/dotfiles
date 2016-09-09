@@ -25,9 +25,11 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'mileszs/ack.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-surround'
@@ -99,12 +101,17 @@ set completeopt=menuone,longest
 " fzf
 map <leader>t :Files<CR>
 map ; :Buffers<CR>
+nmap <tab> :b#<CR>    " switch to the previous buffer using TAB
 
 " Toggle line numbers
 map <leader>n :set nu!<CR>
 
 " Redraw
 map <leader>r :redraw!<CR>
+
+" Syntastic
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 " Neovim-specific configuration
 if has('nvim')
