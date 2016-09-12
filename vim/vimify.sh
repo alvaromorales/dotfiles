@@ -42,4 +42,8 @@ if ! $(python -c "import neovim" &> /dev/null); then sudo pip install neovim; fi
 if ! $(python -c "import pep8" &> /dev/null); then sudo pip install pep8; fi;
 if ! $(python -c "import pyflakes" &> /dev/null); then sudo pip install pyflakes; fi;
 
+# Install npm packages
+# TODO: ensure npm is installed
+npm i -g eslint eslint-plugin-standard eslint-plugin-skip-nolint-lines
+
 echo "Done setting up vim"
