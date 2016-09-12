@@ -8,36 +8,31 @@ set nohlsearch          " disable search highlighting
 set number              " line numbers
 set showmatch           " highlight matching bracket
 
-set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/.vim/plugged')
 
-call vundle#begin()
+Plug 'Quramy/tsuquyomi'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'altercation/vim-colors-solarized'
+Plug 'alvaromorales/pyflakes-vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'ervandew/supertab'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'mileszs/ack.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tell-k/vim-autopep8'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-surround'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/pep8'
 
-Plugin 'VundleVim/Vundle.vim'
-
-" Plugins from Github
-Plugin 'Quramy/tsuquyomi'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'alvaromorales/pyflakes-vim'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'ervandew/supertab'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plugin 'junegunn/fzf.vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tell-k/vim-autopep8'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'vim-scripts/pep8'
-
-call vundle#end()
+call plug#end()
 
 " Global settings for all files (but may be overridden in ftplugin).
 setlocal tabstop=4
@@ -54,7 +49,7 @@ filetype plugin indent on    " enable loading indent file for filetype
 " Solarized
 let g:solarized_termtrans = 1
 set background=dark
-colorscheme solarized
+silent! colorscheme solarized  " ignore warnings if solarized is not yet installed
 
 " NerdTree
 map <F2> :NERDTreeToggle<CR>

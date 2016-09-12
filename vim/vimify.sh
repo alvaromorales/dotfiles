@@ -17,9 +17,10 @@ fi
 [ -e ~/.config/nvim/bundle ] || mkdir -p ~/.config/nvim/bundle
 [ -e ~/.config/nvim/ftplugin ] || mkdir -p ~/.config/nvim/ftplugin
 
-# Install Vundle
-if [ ! -e ~/.config/nvim/bundle/Vundle.vim ]; then
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+# Install Plug
+if [ ! -e ~/.config/nvim/autoload/plug.vim ]; then
+  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # Copy files
@@ -45,5 +46,8 @@ if ! $(python -c "import pyflakes" &> /dev/null); then sudo pip install pyflakes
 # Install npm packages
 # TODO: ensure npm is installed
 npm i -g eslint eslint-plugin-standard eslint-plugin-skip-nolint-lines
+
+# Install plugins
+nvim +PlugInstall +qall
 
 echo "Done setting up vim"
