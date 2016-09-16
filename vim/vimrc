@@ -106,6 +106,7 @@ map <leader>n :set nu!<CR>
 map <leader>r :redraw!<CR>
 
 " Syntastic
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tsuquyomi']
