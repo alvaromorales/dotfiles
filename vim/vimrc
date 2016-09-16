@@ -53,6 +53,7 @@ silent! colorscheme solarized  " ignore warnings if solarized is not yet install
 
 " NerdTree
 map <F2> :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<CR>
 
 " Code Folding
 set foldmethod=indent
