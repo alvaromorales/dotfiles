@@ -16,6 +16,7 @@ fi
 [ -e ~/.config/nvim ] || mkdir -p ~/.config/nvim
 [ -e ~/.config/nvim/bundle ] || mkdir -p ~/.config/nvim/bundle
 [ -e ~/.config/nvim/ftplugin ] || mkdir -p ~/.config/nvim/ftplugin
+[ -e ~/.config/nvim/syntax ] || mkdir -p ~/.config/nvim/syntax
 
 # Install Plug
 if [ ! -e ~/.config/nvim/autoload/plug.vim ]; then
@@ -25,6 +26,7 @@ fi
 
 # Copy files
 cp ftplugin/*.vim ~/.config/nvim/ftplugin
+cp syntax/*.vim ~/.config/nvim/syntax
 cp vimrc ~/.config/nvim/init.vim
 
 # Create symbolic links
