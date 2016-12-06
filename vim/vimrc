@@ -113,7 +113,6 @@ let g:syntastic_typescript_checkers = ['tsuquyomi']
 " Neovim-specific configuration
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>    " use Esc to enter normal mode in terminal
-  nmap <BS> <C-W>h             " temp workaround, see neovim issue #2048
   let g:python_host_prog=$WORKON_HOME."/nvim/bin/python"
 endif
 
