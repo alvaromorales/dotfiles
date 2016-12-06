@@ -16,7 +16,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'alvaromorales/pyflakes-vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'ervandew/supertab'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim'
@@ -126,4 +125,4 @@ map <leader>4 :setlocal expandtab shiftwidth=4 tabstop=4<CR>
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
-autocmd FileType typescript setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType typescript setlocal expandtab shiftwidth=4 tabstop=4
