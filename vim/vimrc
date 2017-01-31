@@ -11,6 +11,7 @@ set showmatch           " highlight matching bracket
 call plug#begin('~/.vim/plugged')
 
 Plug 'Quramy/tsuquyomi'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'altercation/vim-colors-solarized'
 Plug 'alvaromorales/pyflakes-vim'
@@ -115,6 +116,9 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tsuquyomi']
 
+" deoplete.nvim
+let g:deoplete#enable_at_startup = 1
+
 " Neovim-specific configuration
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>    " use Esc to enter normal mode in terminal
@@ -126,6 +130,8 @@ map <leader>2 :setlocal expandtab shiftwidth=2 tabstop=2<CR>
 map <leader>4 :setlocal expandtab shiftwidth=4 tabstop=4<CR>
 
 " Indentation overrides
+autocmd FileType css setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
