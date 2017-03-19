@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'tpope/vim-fugitive'
 Plug 'altercation/vim-colors-solarized'
 Plug 'alvaromorales/pyflakes-vim'
 Plug 'cakebaker/scss-syntax.vim'
@@ -118,6 +119,12 @@ let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 " deoplete.nvim
 let g:deoplete#enable_at_startup = 1
+
+" Git shortcuts
+nnoremap <space>gst :Gstatus<CR>
+nnoremap <space>gc :Gcommit -v -q<CR>
+nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>gb :Gblame<CR>
 
 " Neovim-specific configuration
 if has('nvim')
