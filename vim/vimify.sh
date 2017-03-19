@@ -47,7 +47,7 @@ if ! $(python -c "import pyflakes" &> /dev/null); then sudo pip install pyflakes
 
 # Install npm packages
 # TODO: ensure npm is installed
-npm i -g eslint eslint-plugin-standard eslint-plugin-skip-nolint-lines
+sudo npm i -g eslint eslint-plugin-standard eslint-plugin-skip-nolint-lines
 
 # Install plugins
 nvim +PlugInstall +qall
