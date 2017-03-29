@@ -341,3 +341,6 @@ let b:current_syntax = "scheme"
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
+
+setl lispwords+=define-class
+setl lispwords+=define-script
