@@ -15,6 +15,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'altercation/vim-colors-solarized'
 Plug 'alvaromorales/pyflakes-vim'
+Plug 'bag-man/copypath.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'ervandew/supertab'
 Plug 'jreybert/vimagit'
@@ -132,6 +133,10 @@ if has('nvim')
   tnoremap <Esc> <C-\><C-n>    " use Esc to enter normal mode in terminal
   let g:python_host_prog=$WORKON_HOME."/nvim/bin/python"
 endif
+
+" Copypath
+map <leader>cp :CopyPath<CR>
+map <leader>cf :CopyFileName<CR>
 
 " Common indent settings
 map <leader>2 :setlocal expandtab shiftwidth=2 tabstop=2<CR>
