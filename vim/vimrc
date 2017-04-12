@@ -52,6 +52,10 @@ syntax on                    " syntax highlighing
 filetype on                  " try to detect filetypes
 filetype plugin indent on    " enable loading indent file for filetype
 
+" Search
+set ignorecase
+set smartcase
+
 " Solarized
 let g:solarized_termtrans = 1
 set background=dark
