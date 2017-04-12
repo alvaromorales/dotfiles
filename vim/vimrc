@@ -26,6 +26,7 @@ Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tell-k/vim-autopep8'
@@ -137,6 +138,9 @@ endif
 " Copypath
 map <leader>cp :CopyPath<CR>
 map <leader>cf :CopyFileName<CR>
+
+" BClose
+nnoremap <silent> <Leader>bd :Bclose<CR>
 
 " Common indent settings
 map <leader>2 :setlocal expandtab shiftwidth=2 tabstop=2<CR>
