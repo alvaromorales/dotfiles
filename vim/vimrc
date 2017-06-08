@@ -17,6 +17,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'alvaromorales/pyflakes-vim'
 Plug 'bag-man/copypath.vim'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'dkprice/vim-easygrep'
 Plug 'ervandew/supertab'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
