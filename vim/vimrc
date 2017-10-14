@@ -17,17 +17,13 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'alvaromorales/pyflakes-vim'
 Plug 'bag-man/copypath.vim'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'dkprice/vim-easygrep'
 Plug 'ervandew/supertab'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'mhinz/vim-startify'
-Plug 'mileszs/ack.vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript'
-Plug 'rbgrouleff/bclose.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tell-k/vim-autopep8'
@@ -145,9 +141,6 @@ endif
 " Copypath
 map <leader>cp :CopyPath<CR>
 map <leader>cf :CopyFileName<CR>
-
-" BClose
-nnoremap <silent> <Leader>bd :Bclose<CR>
 
 " Common indent settings
 map <leader>2 :setlocal expandtab shiftwidth=2 tabstop=2<CR>
