@@ -1,5 +1,5 @@
 set backspace=2         " backspace in insert mode works like normal editor
-set colorcolumn=80      " highlight column at 80 chars
+set colorcolumn=80,120  " highlight column at 80 and 120 chars
 set hidden              " send unsaved buffers to the background without error
 set mouse=              " disable mouse
 set nobackup            " get rid of anoying ~file
