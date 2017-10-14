@@ -25,7 +25,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mhinz/vim-startify'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
 Plug 'tell-k/vim-autopep8'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -34,6 +33,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/pep8'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -140,11 +140,15 @@ autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType typescript setlocal expandtab shiftwidth=4 tabstop=4
 autocmd FileType scheme setlocal expandtab shiftwidth=2 tabstop=2
 
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tsuquyomi']
+" Ale
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tslint', 'tsserver'],
+\}
+
+if filereadable($TSSERVER_BIN)
+  call ale#Set('typescript_tsserver_executable', $TSSERVER_BIN)
+endif
 
 " ------ Python ------
 
