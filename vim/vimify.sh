@@ -38,6 +38,9 @@ source `which virtualenvwrapper.sh`
 mkvirtualenv nvim
 pip install --upgrade pip autopep8 neovim pep8 pyflakes
 deactivate
+mkvirtualenv --python=`which python3` nvim-python3
+pip install --upgrade pip autopep8 neovim pep8 pyflakes
+deactivate
 
 # TODO: change PYTHONPATH to nvim virtualenv instead of installing system-wide
 if ! $(python -c "import autopep8" &> /dev/null); then sudo pip install autopep8; fi;
