@@ -82,23 +82,14 @@ map <c-h> <c-w>h
 " :cn    " Go to the next error in the window
 " :cnf   " Go to the first error in the next file
 
-" Pyflakes
-let g:pyflakes_use_quickfix = 0      " no quickfix window for pyflakes
-
-" Pep8
-let g:pep8_map='<F7>'
-
-" Autopep8
-let g:autopep8_ignore="E501"
-let g:autopep8_disable_show_diff=1
-
-" tsuquyomi
-let g:tsuquyomi_disable_quickfix = 1
-
-" Tab Completion and Doc
-au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabCrMapping = 0
+autocmd FileType *
+      \ if &omnifunc != '' |
+      \     call SuperTabChain(&omnifunc, '<c-p>') |
+      \ endif
 set completeopt=menuone,longest
+" let g:SuperTabDefaultCompletionType = "<c-n>"
+" let g:SuperTabDefaultCompletionType = 'context'
 " set completeopt-=preview
 
 " fzf
@@ -115,12 +106,6 @@ map <leader>n :set nu!<CR>
 
 " Unfuck my screen
 nnoremap U :syntax sync fromstart<CR>:redraw!<CR>
-
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 " deoplete.nvim
 let g:deoplete#enable_at_startup = 1
@@ -154,3 +139,33 @@ autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType typescript setlocal expandtab shiftwidth=4 tabstop=4
 autocmd FileType scheme setlocal expandtab shiftwidth=2 tabstop=2
+
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+
+" ------ Python ------
+
+" Pyflakes
+let g:pyflakes_use_quickfix = 0      " no quickfix window for pyflakes
+
+" Pep8
+let g:pep8_map='<F7>'
+
+" Autopep8
+let g:autopep8_ignore="E501"
+let g:autopep8_disable_show_diff=1
+
+" Omnifunc completion
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+" ------ JS/Typescript ------
+
+" tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1
+
+" Completion
+autocmd FileType typescript set omnifunc=tsuquyomi#complete
+autocmd FileType typescript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
