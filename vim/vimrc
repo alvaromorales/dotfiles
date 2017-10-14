@@ -138,7 +138,8 @@ nnoremap <space>gb :Gblame<CR>
 " Neovim-specific configuration
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>    " use Esc to enter normal mode in terminal
-  let g:python_host_prog=$WORKON_HOME."/nvim-python3/bin/python"
+  let g:python_host_prog=$WORKON_HOME."/nvim/bin/python"
+  let g:python3_host_prog=$WORKON_HOME."/nvim-python3/bin/python"
 endif
 
 " Copypath
