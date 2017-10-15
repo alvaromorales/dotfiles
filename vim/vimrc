@@ -143,6 +143,7 @@ autocmd FileType scheme setlocal expandtab shiftwidth=2 tabstop=2
 " Ale
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'python': [],
 \   'typescript': ['tslint', 'tsserver'],
 \}
 
