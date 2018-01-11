@@ -10,7 +10,6 @@ set showmatch           " highlight matching bracket
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'altercation/vim-colors-solarized'
@@ -22,6 +21,7 @@ Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'mhartington/nvim-typescript'
 Plug 'mhinz/vim-startify'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
@@ -151,6 +151,10 @@ if filereadable($TSSERVER_BIN)
   call ale#Set('typescript_tsserver_executable', $TSSERVER_BIN)
 endif
 
+" ------ JS/Typescript ------
+
+let g:nvim_typescript#default_mappings = 1
+
 " ------ Python ------
 
 " Pyflakes
@@ -164,13 +168,4 @@ let g:autopep8_ignore="E501"
 let g:autopep8_disable_show_diff=1
 
 " Omnifunc completion
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-
-" ------ JS/Typescript ------
-
-" tsuquyomi
-let g:tsuquyomi_disable_quickfix = 1
-
-" Completion
-autocmd FileType typescript set omnifunc=tsuquyomi#complete
-autocmd FileType typescript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+" autocmd FileType python set omnifunc=pythoncomplete#Complete
