@@ -115,6 +115,7 @@ nnoremap <space>gst :Magit<CR>
 nnoremap <space>gc :Gcommit -v -q<CR>
 nnoremap <space>gd :Gdiff<CR>
 nnoremap <space>gb :Gblame<CR>
+nnoremap <space>glg :Git log --stat<CR>
 
 " Neovim-specific configuration
 if has('nvim')
