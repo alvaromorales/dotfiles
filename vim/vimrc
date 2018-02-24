@@ -154,7 +154,10 @@ endif
 
 " ------ JS/Typescript ------
 
-let g:nvim_typescript#default_mappings = 1
+let g:nvim_typescript#default_mappings = 0
+autocmd FileType typescript nnoremap <buffer> <c-]> :TSDef<CR>
+autocmd FileType typescript nnoremap <buffer> <c-^> :TSRefs<CR>
+autocmd FileType typescript nnoremap <buffer> <c-t> :TSType<CR>
 
 " ------ Python ------
 
