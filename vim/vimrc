@@ -98,6 +98,8 @@ set completeopt=menuone,longest
 map <leader>t :Files<CR>
 map ; :Buffers<CR>
 nmap <tab> :b#<CR>    " switch to the previous buffer using TAB
+imap <c-x><c-f> <plug>(fzf-complete-file-ag)
+map , :Lines<CR>
 
 " startify
 let g:startify_change_to_dir = 0
