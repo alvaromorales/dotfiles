@@ -27,6 +27,7 @@ Plug 'mhinz/vim-startify'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'tell-k/vim-autopep8'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -174,3 +175,8 @@ let g:autopep8_disable_show_diff=1
 
 " Omnifunc completion
 " autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+" vim-abolish reference - case mutations.
+"   crc: camelCase
+"   crs: snake_case
+"   cru: SNAKE_UPPERCASE
