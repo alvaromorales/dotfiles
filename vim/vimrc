@@ -77,6 +77,10 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" Escape key
+inoremap jk <Esc>`^
+inoremap <Esc> <nop>
+
 " Quickfix window reference
 " :copen " Open the quickfix window
 " :ccl   " Close it
