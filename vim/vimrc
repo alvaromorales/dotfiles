@@ -17,12 +17,13 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'alvaromorales/pyflakes-vim'
 Plug 'bag-man/copypath.vim'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'dense-analysis/ale'
 Plug 'ervandew/supertab'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'mhinz/vim-startify'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
@@ -35,7 +36,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/pep8'
-Plug 'w0rp/ale'
 
 call plug#end()
 
