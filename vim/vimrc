@@ -94,7 +94,7 @@ autocmd FileType *
       \     call SuperTabChain(&omnifunc, '<c-p>') |
       \ endif
 set completeopt=menuone,longest
-" let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 " let g:SuperTabDefaultCompletionType = 'context'
 " set completeopt-=preview
 
