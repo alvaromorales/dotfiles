@@ -10,6 +10,7 @@ set showmatch           " highlight matching bracket
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -22,7 +23,6 @@ Plug 'ervandew/supertab'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'leafgarland/typescript-vim'
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'mhinz/vim-startify'
 Plug 'pangloss/vim-javascript'
