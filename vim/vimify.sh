@@ -53,7 +53,7 @@ if [ "$DO_FULL_INSTALL" = true ]; then
 
   # Install npm packages
   # TODO: ensure npm is installed
-  sudo npm i -g eslint eslint-plugin-standard eslint-plugin-skip-nolint-lines
+  sudo npm i -g eslint eslint-plugin-standard eslint-plugin-skip-nolint-lines typescript typescript-language-server pyright
 fi
 
 # Install plugins
