@@ -39,17 +39,18 @@ if [ "$DO_FULL_INSTALL" = true ]; then
   # Setup virtualenv for neovim
   source `which virtualenvwrapper.sh`
   mkvirtualenv nvim
-  pip install --upgrade pip autopep8 neovim pep8 pyflakes
+  pip install --upgrade pip autopep8 neovim pep8 pylint flake8
   deactivate
   mkvirtualenv --python=`which python3` nvim-python3
-  pip install --upgrade pip autopep8 neovim pep8 pyflakes
+  pip install --upgrade pip autopep8 neovim pep8 pylint flake8
   deactivate
 
   # TODO: change PYTHONPATH to nvim virtualenv instead of installing system-wide
   if ! $(python -c "import autopep8" &> /dev/null); then sudo pip install autopep8; fi;
   if ! $(python -c "import neovim" &> /dev/null); then sudo pip install neovim; fi;
   if ! $(python -c "import pep8" &> /dev/null); then sudo pip install pep8; fi;
-  if ! $(python -c "import pyflakes" &> /dev/null); then sudo pip install pyflakes; fi;
+  if ! $(python -c "import flake8" &> /dev/null); then sudo pip install flake8; fi;
+  if ! $(python -c "import pylint" &> /dev/null); then sudo pip install pylint; fi;
 
   # Install npm packages
   # TODO: ensure npm is installed

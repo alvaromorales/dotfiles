@@ -15,7 +15,6 @@ Plug 'Shougo/denite.nvim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'altercation/vim-colors-solarized'
-Plug 'alvaromorales/pyflakes-vim'
 Plug 'bag-man/copypath.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'dense-analysis/ale'
@@ -152,7 +151,7 @@ autocmd FileType scheme setlocal expandtab shiftwidth=2 tabstop=2
 " Ale
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'python': [],
+\   'python': ['flake8', 'pylint'],
 \   'typescript': ['tslint', 'tsserver'],
 \}
 
@@ -172,16 +171,6 @@ autocmd FileType typescript,typescriptreact nnoremap <buffer> <c-^> :TSRefs<CR>
 autocmd FileType typescript,typescriptreact nnoremap <buffer> <c-t> :TSType<CR>
 
 " ------ Python ------
-
-" Pyflakes
-let g:pyflakes_use_quickfix = 0      " no quickfix window for pyflakes
-
-" Pep8
-let g:pep8_map='<F7>'
-
-" Autopep8
-let g:autopep8_ignore="E501"
-let g:autopep8_disable_show_diff=1
 
 " Omnifunc completion
 " autocmd FileType python set omnifunc=pythoncomplete#Complete
