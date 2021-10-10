@@ -143,21 +143,22 @@ map <leader>4 :setlocal expandtab shiftwidth=4 tabstop=4<CR>
 autocmd FileType css setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal expandtab shiftwidth=2 tabstop=2
 autocmd FileType html setlocal expandtab shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal expandtab shiftwidth=4 tabstop=4
 autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
-autocmd FileType typescript setlocal expandtab shiftwidth=4 tabstop=4
+autocmd FileType typescript,typescriptreact setlocal expandtab shiftwidth=4 tabstop=4
 autocmd FileType scheme setlocal expandtab shiftwidth=2 tabstop=2
 
 " Ale
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'python': ['flake8', 'pylint'],
+\   'python': ['flake8'],
 \   'typescript': ['tslint', 'tsserver'],
 \}
 
 let g:ale_linters_explicit = 1
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_javascript_eslint_options = '--resolve-plugins-relative-to=`npm root -g` --parser-options=ecmaVersion:2018'
+let g:ale_python_flake8_options = '--max-line-length=132'
 
 if filereadable($TSSERVER_BIN)
   call ale#Set('typescript_tsserver_executable', $TSSERVER_BIN)
