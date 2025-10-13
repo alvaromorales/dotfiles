@@ -119,9 +119,9 @@ let g:deoplete#enable_at_startup = 1
 
 " Git shortcuts
 nnoremap <space>gst :Magit<CR>
-nnoremap <space>gc :Gcommit -v -q<CR>
-nnoremap <space>gd :Gdiff<CR>
-nnoremap <space>gb :Gblame<CR>
+nnoremap <space>gc :Git commit -v -q<CR>
+nnoremap <space>gd :Git diff<CR>
+nnoremap <space>gb :Git blame<CR>
 nnoremap <space>glg :Git log --stat %:p <CR>
 
 " Neovim-specific configuration
