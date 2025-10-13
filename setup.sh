@@ -6,7 +6,13 @@ echo "Starting Alvaro's Mac setup"
 
 if test ! $(which brew); then
   echo "Installing Homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # Add Homebrew to PATH for ARM64 Macs
+  if [[ $(uname -m) == 'arm64' ]]; then
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
 else
   echo "Homebrew is already installed."
 fi
@@ -17,19 +23,12 @@ brew update
 
 apps=(
  iterm2
- shiftit
 )
 
 echo "Installing apps..."
-brew tap caskroom/cask
-brew cask install --appdir=/Applications ${apps[@]}
+brew install --cask --appdir=/Applications ${apps[@]}
 
 # Shell setup
 
 echo "Installing oh-my-zsh"
-curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
-
-# Python
-echo "Installing Python virtualenv"
-sudo pip install virtualenv virtualenvwrapper
-pip install --user virtualenvwrapper
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
