@@ -14,7 +14,6 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'altercation/vim-colors-solarized'
 Plug 'bag-man/copypath.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'dense-analysis/ale'
@@ -35,6 +34,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/pep8'
+Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
 
@@ -55,9 +55,11 @@ set ignorecase
 set smartcase
 
 " Solarized
-let g:solarized_termtrans = 1
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
-silent! colorscheme solarized  " ignore warnings if solarized is not yet installed
+colorscheme solarized8
 
 " NerdTree
 map <F2> :NERDTreeToggle<CR>
@@ -127,8 +129,6 @@ nnoremap <space>glg :Git log --stat %:p <CR>
 " Neovim-specific configuration
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>    " use Esc to enter normal mode in terminal
-  let g:python_host_prog=$WORKON_HOME."/nvim/bin/python"
-  let g:python3_host_prog=$WORKON_HOME."/nvim-python3/bin/python"
 endif
 
 " Copypath
